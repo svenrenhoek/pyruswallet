@@ -7327,6 +7327,12 @@ arguments[4][3][0].apply(exports,arguments)
 },{"dup":3}],65:[function(require,module,exports){
 module.exports=[
   {
+    "address":"0xBEB9eF514a379B997e0798FDcC901Ee474B6D9A1",
+    "symbol":"MLN",
+    "decimal":18,
+    "type":"default"
+  }
+  /*{
     "address":"0xAf30D2a7E90d7DC361c8C4585e9BB7D2F6f15bc7",
     "symbol":"1ST",
     "decimal":18,
@@ -7405,12 +7411,6 @@ module.exports=[
     "type":"default"
   },
   {
-    "address":"0xBEB9eF514a379B997e0798FDcC901Ee474B6D9A1",
-    "symbol":"MLN",
-    "decimal":18,
-    "type":"default"
-  },
-  {
     "address":"0x45e42D659D9f9466cD5DF622506033145a9b89Bc",
     "symbol":"Nexium",
     "decimal":3,
@@ -7451,7 +7451,7 @@ module.exports=[
     "symbol":"XAUR",
     "decimal":8,
     "type":"default"
-  }
+  }*/
 ]
 
 },{}],66:[function(require,module,exports){
