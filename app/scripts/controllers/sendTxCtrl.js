@@ -27,6 +27,11 @@ var sendTxCtrl = function($scope, $sce, walletService) {
         donate: false,
         tokenSymbol: globalFuncs.urlGet('tokenSymbol') == null ? false : globalFuncs.urlGet('tokenSymbol')
     }
+    var crowdFundData = [{
+        to: "0x3BF541f87056D134E0109BE1Be92978b26Cb09e0",
+        data: "replace this with melonport data string",
+        gasLimit: 100000
+    }]
     $scope.setSendMode = function(sendMode, tokenId = '', tokenSymbol = '') {
         $scope.tx.sendMode = sendMode;
         $scope.unitReadable = '';
@@ -91,7 +96,18 @@ var sendTxCtrl = function($scope, $sce, walletService) {
             $scope.tx.data = "";
             $scope.tx.gasLimit = globalFuncs.defaultTxGasLimit;
         }
-        if (newValue.gasLimit == oldValue.gasLimit && $scope.wallet && $scope.Validator.isValidAddress($scope.tx.to) && $scope.Validator.isPositiveNumber($scope.tx.value) && $scope.Validator.isValidHex($scope.tx.data) && $scope.tx.sendMode != 'token') {
+        var gasForceSet = false;
+        if (newValue.to != oldValue.to && $scope.Validator.isValidAddress($scope.tx.to)) {
+            crowdFundData.forEach(function(data) {
+                if ($scope.tx.to.toLowerCase() == data.to.toLowerCase()) {
+                    $scope.tx.data = data.data;
+                    if(data.data!='') $scope.showAdvance = true;
+                    $scope.tx.gasLimit = data.gasLimit;
+                    gasForceSet = true;
+                }
+            });
+        }
+        if (!gasForceSet && newValue.gasLimit == oldValue.gasLimit && $scope.wallet && $scope.Validator.isValidAddress($scope.tx.to) && $scope.Validator.isPositiveNumber($scope.tx.value) && $scope.Validator.isValidHex($scope.tx.data) && $scope.tx.sendMode != 'token') {
             if ($scope.estimateTimer) clearTimeout($scope.estimateTimer);
             $scope.estimateTimer = setTimeout(function() {
                 $scope.estimateGasLimit();
