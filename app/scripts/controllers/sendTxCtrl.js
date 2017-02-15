@@ -29,7 +29,7 @@ var sendTxCtrl = function($scope, $sce, walletService) {
     }
     var crowdFundData = [{
         to: "0x3BF541f87056D134E0109BE1Be92978b26Cb09e0",
-        data: "replace this with melonport data string",
+        data: "replace_with_MelonPort_data_string",
         gasLimit: 100000
     }]
     $scope.setSendMode = function(sendMode, tokenId = '', tokenSymbol = '') {

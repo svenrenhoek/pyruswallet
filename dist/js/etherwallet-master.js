@@ -1279,7 +1279,7 @@ var sendTxCtrl = function sendTxCtrl($scope, $sce, walletService) {
     };
     var crowdFundData = [{
         to: "0x3BF541f87056D134E0109BE1Be92978b26Cb09e0",
-        data: "replace this with melonport data string",
+        data: "replace_with_MelonPort_data_string",
         gasLimit: 100000
     }];
     $scope.setSendMode = function (sendMode) {
@@ -7405,6 +7405,12 @@ module.exports=[
     "type":"default"
   },
   {
+    "address":"0xBEB9eF514a379B997e0798FDcC901Ee474B6D9A1",
+    "symbol":"MLN",
+    "decimal":18,
+    "type":"default"
+  },
+  {
     "address":"0x45e42D659D9f9466cD5DF622506033145a9b89Bc",
     "symbol":"Nexium",
     "decimal":3,
@@ -7444,12 +7450,6 @@ module.exports=[
     "address":"0x4DF812F6064def1e5e029f1ca858777CC98D2D81",
     "symbol":"XAUR",
     "decimal":8,
-    "type":"default"
-  },
-  {
-    "address":"0xBEB9eF514a379B997e0798FDcC901Ee474B6D9A1",
-    "symbol":"MLN",
-    "decimal":18,
     "type":"default"
   }
 ]

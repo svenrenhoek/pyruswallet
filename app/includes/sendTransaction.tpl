@@ -128,6 +128,10 @@
           <p>If you are getting an insufficient balance for gas ... error, you must have a small amount of ETH in your account in order to cover the cost of gas. Add 0.01 ETH to this account and try again.</p>
         </div>
 
+        <div class="alert alert-danger" ng-show="tx.to==='0x3BF541f87056D134E0109BE1Be92978b26Cb09e0'">
+          <a href="https://www.reddit.com/r/ethereum/comments/5u69nk/myetherwallet_quickguide_for_melonport/" target="_blank"> Having issues? Don't know what the data string is? Read our QuickGuide for MelonPort Contribution. </a>
+        </div>
+
 
       </div>
       <!-- / Content -->
